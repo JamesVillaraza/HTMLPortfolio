@@ -1,0 +1,389 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 100px; /* matches your fixed navbar height */
+  font-family: 'Quicksand', 'Montserrat', 'Source Code Pro', sans-serif;
+  overflow-x: hidden;
+}
+
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 2000; /* Ensure navbar is above RoughNotation overlays */
+}
+
+li {
+    list-style: none;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 1280px;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+/* NAVIGATION BAR CSS */
+.navbar {
+    width: 100%;
+    margin: auto;
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5rem;
+    font-size: 1.5rem;
+}
+
+.nav-branding {
+    font-size: 2rem;
+}
+
+.about, .projects, .contact {
+    height: auto;
+    margin-top: 100px;
+    /* border: 1px solid red; */
+}
+
+/* ABOUT CSS */
+
+.about {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem; /* 2rem -> 32px */
+    min-height: 100%;
+    align-items: stretch;
+}
+
+.about-left {
+    flex: 2; /* 2/3 width */
+    min-width: 304px; /* closest multiple of 8 */
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1; /* 1/3 width */
+    min-width: 200px;
+    max-width: 448px; /* 450 -> 448 */
+    height: 100%;
+    align-self: center;
+}
+
+#about-header {
+    font-size: 48px; /* closest multiple of 8 */
+    margin-bottom: 8px;
+}
+
+#about-paragraph {
+    font-size: 1.5rem; /* up from 22px for 8pt grid */
+}
+
+#ss1 {
+  white-space: nowrap;
+}
+
+#about-pic {
+    width:100%;
+    max-width: 448px;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: cover; /* or contain whatever works better */
+    display: flex;
+    flex-grow: 1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .8), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 2.5px solid #240f0f;
+}
+
+.about-buttons {
+    display: flex;
+    gap: 3rem; /* 25px -> 24px */
+    margin-top: 16px; /* 20px -> 16px */
+}
+
+#resume-button,
+#linkedin-button {
+    padding: 12px 40px;             /* Larger padding */
+    font-size: 16px;                /* Bigger text */
+    border: 1px outset buttonborder;
+    border-radius: 8px; /* 6px -> 8px */
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;          /* Helps with padding and layout */
+}
+
+#resume-button {
+    background-color: black;
+    color: white;
+    border-color: gray;
+}
+
+#linkedin-button {
+    background-color: white;
+    color: black;
+}
+
+/* projects css */
+.projects-entry {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem; /* 3rem -> 24px */
+    justify-content: center;
+    margin-top: 48px; /* 50px -> 48px */
+    margin-bottom: 48px;
+    height: auto;
+}
+
+#projects-header {
+    font-size: 48px;
+    /* border: 1px solid black; */
+    width: 100%;
+}
+
+.project-description {
+    font-size: 24px;
+}
+
+.project-title {
+    font-size: 32px;
+}
+
+.projects-image-left {
+    flex: 1; /* 1/3 width */
+    min-width: 200px;
+}
+.projects-text-right {
+    flex: 2; /* 2/3 width */
+    min-width: 304px;
+}
+
+.projects-image-right {
+    flex: 1; /* 1/3 width */
+    min-width: 200px;
+}
+.projects-text-left {
+    flex: 2; /* 2/3 width */
+    min-width: 304px;
+}
+
+/* contact css */
+.contact {
+    margin-bottom: 32px; /* 30px -> 32px */
+}
+
+#contact-header {
+    font-size: 48px;
+    margin-bottom: 8px;
+}
+
+.contact-resources {
+    display: flex;
+    gap: 4rem; /* 100px -> 32px for 8pt grid */
+}
+
+.contact-resource {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    gap: 1rem; /* 20px -> 16px */
+    justify-content: center;
+}
+
+.contact-pic {
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 8px; /* 10px -> 8px */
+}
+
+#phone-number {
+    cursor: pointer;
+}
+
+#copy-toast {
+    display:none;
+    position:fixed;
+    bottom:32px; /* 30px -> 32px */
+    left:50%;
+    transform:translateX(-50%);
+    background:#222;
+    color:#fff;
+    padding:8px 24px; /* 12px -> 8px */
+    border-radius:8px; /* 6px -> 8px */
+    z-index:1000;
+    font-size:16px;
+}
+
+@media(max-width:1281px){
+    .container{
+        width: 1104px; /* 1100 -> 1104 */
+    }
+
+    .about {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menu {
+        gap: 2rem;
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    #contact-header {
+        font-size: 48px;
+        margin-bottom: 8px;
+        margin-right: 48px;
+    }
+}
+
+@media(max-width:1100px) {
+    .container{
+        width: 100%;
+        padding: 0 8px;
+        box-sizing: border-box;
+    }
+    .about-buttons{
+        justify-content: center;
+    }
+}
+
+@media(max-width:800px){
+    .container{
+        min-width: 600px;
+        width: 100%;
+        padding: 0 8px;
+        box-sizing: border-box;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menu {
+        gap: 2rem;;
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .about, .projects, .contact {
+        height: auto;
+        margin-top: 96px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .about-buttons{
+        justify-content: center;
+    }
+}
+
+@media(max-width:481px){
+    html {
+        font-size: 8px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-branding {
+        font-size: 3.5rem;
+    }
+    .nav-menu {
+        font-size: 2.5rem;
+        gap: 1rem;
+        margin-bottom: 8px;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0 8px;
+        margin: auto;
+        box-sizing: border-box;
+    }
+
+    .about-buttons{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #project-entry1, #project-entry3 {
+        flex-direction: column-reverse;
+    }
+
+    .about {
+        flex-direction: column;
+        align-items: center;
+        min-height: unset;
+        height: auto;
+    }
+    #about-paragraph {
+        font-size: 3rem; /* up from 22px for 8pt grid */
+    }
+    .about-right {
+        width: 100%;
+        max-width: 296px;
+        margin: 0 auto;
+        align-self: center;
+        height: auto;
+    }
+    #about-pic {
+        width: 100%;
+        max-width: 296px;
+        height: auto;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .contact-resources {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;;
+        font-size: 2rem;
+    }
+}

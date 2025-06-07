@@ -19,7 +19,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgb(252, 252, 252);
+    background-color: rgb(236, 236, 236);
     z-index: 2000; /* Ensure navbar is above RoughNotation overlays */
 }
 
@@ -64,7 +64,7 @@ a{
     position: absolute;
     cursor: pointer;
     top: 0; left: 0; right: 0; bottom: 0;
-    background-color: #ccc;
+    background-color: #000000;
     border-radius: 20px;
     transition: .4s;
 }
@@ -75,15 +75,16 @@ a{
     width: 26px;
     left: 3px;
     bottom: 3px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border-radius: 50%;
     transition: .4s;
 }
 .theme-switch input:checked + .slider {
-    background-color: #979797;
+    background-color: #ffffff;
 }
 .theme-switch input:checked + .slider:before {
     transform: translateX(28px);
+    background-color: rgb(0, 0, 0);
 }
 
 /* NAVIGATION BAR CSS */
@@ -110,8 +111,11 @@ a{
 
 .about, .projects, .contact {
     height: auto;
-    margin-top: 100px;
-    /* border: 1px solid red; */
+    margin-top: 3rem;
+    background-color: #C9D6EA;
+    padding: 1rem;
+    border-radius: 10px;
+    /* border: 2px solid purple; */
 }
 
 /* ABOUT CSS */
@@ -122,6 +126,7 @@ a{
     gap: 2rem; /* 2rem -> 32px */
     min-height: 100%;
     align-items: stretch;
+    margin-top: 6rem;
 }
 
 .about-left {
@@ -191,9 +196,17 @@ a{
     border-color: gray;
 }
 
+#resume-button:hover {
+    background-color: #303030;
+}
+
 #linkedin-button {
     background-color: white;
     color: black;
+}
+
+#linkedin-button:hover {
+    background-color: rgb(255, 226, 226);
 }
 
 /* projects css */
@@ -206,8 +219,14 @@ a{
     margin-bottom: 48px;
     height: auto;
     padding: 1rem;
-    /* border: 1px solid salmon; */
+    background-color: #b2c3dd;
+    /* border: 1px solid rgb(0, 0, 0); */
     border-radius: 10px;
+}
+
+.projects-entry:hover {
+    transform: scale(1.015);
+    transition: background-color .75s, transform .75s;
 }
 
 #projects-header {
@@ -242,7 +261,7 @@ a{
 
 /* contact css */
 .contact {
-    margin-bottom: 32px; /* 30px -> 32px */
+    margin-bottom: 2rem;
 }
 
 #contact-header {
@@ -314,7 +333,7 @@ body.dark-mode .contact-text {
 body.dark-mode .about,
 body.dark-mode .projects,
 body.dark-mode .contact {
-    background: transparent;
+    background: #222;
 }
 body.dark-mode #resume-button {
     background: #f1f1f1;
@@ -327,6 +346,10 @@ body.dark-mode #linkedin-button {
 body.dark-mode #about-pic {
     border-color: #f1f1f1;
     box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+body.dark-mode .projects-entry {
+    color: #f1f1f1;
+    background-color: #333;
 }
 body.dark-mode #copy-toast {
     background: #333;

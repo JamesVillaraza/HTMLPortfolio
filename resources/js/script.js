@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () =>
     });
 });
 
+// make sure to know how this works
 function setContactIconsForTheme() {
     const isDark = document.body.classList.contains('dark-mode');
     const phonePic = document.getElementById('phone-pic');
@@ -97,4 +98,6 @@ document.addEventListener('DOMContentLoaded', function()
         setupAnnotations(); // Update annotation colors on theme change
         setContactIconsForTheme(); // Update icons on theme change
     });
+    setupAnnotations();
+    setContactIconsForTheme();
 });

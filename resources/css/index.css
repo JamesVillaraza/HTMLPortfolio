@@ -19,7 +19,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: white;
+    background-color: rgb(252, 252, 252);
     z-index: 2000; /* Ensure navbar is above RoughNotation overlays */
 }
 
@@ -38,6 +38,52 @@ a{
     margin: auto;
     padding-left: 10rem;
     padding-right: 10rem;
+}
+
+/* Toggle switch for dark mode */
+.theme-toggle-container {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    left: auto;
+    top: auto;
+    z-index: 3000;
+}
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 32px;
+}
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    border-radius: 20px;
+    transition: .4s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: .4s;
+}
+.theme-switch input:checked + .slider {
+    background-color: #979797;
+}
+.theme-switch input:checked + .slider:before {
+    transform: translateX(28px);
 }
 
 /* NAVIGATION BAR CSS */
@@ -159,6 +205,9 @@ a{
     margin-top: 48px; /* 50px -> 48px */
     margin-bottom: 48px;
     height: auto;
+    padding: 1rem;
+    /* border: 1px solid salmon; */
+    border-radius: 10px;
 }
 
 #projects-header {
@@ -246,6 +295,44 @@ a{
     font-size:16px;
 }
 
+/* Dark mode styles */
+body.dark-mode {
+    background: #181818;
+    color: #f1f1f1;
+}
+body.dark-mode header {
+    background: #222;
+}
+body.dark-mode .container {
+    background: transparent;
+}
+body.dark-mode .nav-menu a,
+body.dark-mode .nav-branding,
+body.dark-mode .contact-text {
+    color: #f1f1f1;
+}
+body.dark-mode .about,
+body.dark-mode .projects,
+body.dark-mode .contact {
+    background: transparent;
+}
+body.dark-mode #resume-button {
+    background: #f1f1f1;
+    color: #181818;
+}
+body.dark-mode #linkedin-button {
+    background: #333;
+    color: #f1f1f1;
+}
+body.dark-mode #about-pic {
+    border-color: #f1f1f1;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+body.dark-mode #copy-toast {
+    background: #333;
+    color: #f1f1f1;
+}
+
 @media(max-width:1280px){
     .container {
         padding-left: 5rem;
@@ -261,6 +348,7 @@ a{
     }
 }
 
+/* desktop */
 @media(max-width:1024px){
     .container {
         padding-left: 3rem;
@@ -294,6 +382,7 @@ a{
     }
 }
 
+/* tablet */
 @media(max-width:768px){    
     .nav-menu {
         gap: 2rem;
@@ -314,6 +403,26 @@ a{
     }
 }
 
+/* just for theme toggle */
+@media(max-width:480px){
+    .theme-toggle-container {
+        bottom: 1rem;
+        right: 1rem;
+    }
+    .theme-switch {
+        width: 48px;
+        height: 26px;
+    }
+    .slider:before {
+        height: 20px;
+        width: 20px;
+    }
+    .theme-switch input:checked + .slider:before {
+        transform: translateX(22px);
+    }
+}
+
+/* mobile */
 @media(max-width:320px){
     .container {
         padding-left: 1rem;

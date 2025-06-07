@@ -154,7 +154,7 @@ a{
 }
 
 #about-paragraph {
-    font-size: 1.5rem; /* up from 22px for 8pt grid */
+    font-size: 1.45rem; /* up from 22px for 8pt grid */
 }
 
 #ss1 {
@@ -180,8 +180,8 @@ a{
 
 #resume-button,
 #linkedin-button {
-    padding: 12px 40px;             /* Larger padding */
-    font-size: 16px;                /* Bigger text */
+    padding: 18px 48px;             /* Larger padding */
+    font-size: 20px;                /* Bigger text */
     border: 1px outset buttonborder;
     border-radius: 8px; /* 6px -> 8px */
     text-decoration: none;
@@ -236,6 +236,11 @@ a{
 
 .project-description {
     font-size: 24px;
+    min-width: 0;
+    width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    box-sizing: border-box;
 }
 
 .project-title {
@@ -247,6 +252,11 @@ a{
 }
 .projects-text-right {
     flex: 2; /* 2/3 width */
+    min-width: 0;
+    width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    box-sizing: border-box;
 }
 
 .projects-image-right {
@@ -256,6 +266,11 @@ a{
 .projects-text-left {
     flex: 2; /* 2/3 width */
     min-width: 304px;
+    min-width: 0;
+    width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    box-sizing: border-box;
 }
 
 /* contact css */
@@ -293,6 +308,8 @@ a{
     justify-content: center;
     align-items: center;
     padding-right: 8px; /* 10px -> 8px */
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 #phone-number {
@@ -420,14 +437,24 @@ body.dark-mode #copy-toast {
         gap: 1rem;
     }
 
+    #resume-button,
+    #linkedin-button {
+        padding: 12px 32px;             /*Larger padding*/
+        font-size: 16px;                /* Bigger text */
+        border: 1px outset buttonborder;
+    }
+
     #project-entry1, #project-entry3 {
-        display: flex;
         flex-direction: column-reverse
     }
 
     .contact-resources {
         flex-wrap: wrap;
         gap: 1.5rem;
+    }
+
+    #project-entry2 {
+        flex-direction: column;
     }
 }
 
@@ -447,6 +474,13 @@ body.dark-mode #copy-toast {
     }
     .theme-switch input:checked + .slider:before {
         transform: translateX(22px);
+    }
+
+    #resume-button,
+    #linkedin-button {
+        padding: 12px 32px;             /*Larger padding*/
+        font-size: 14px;                /* Bigger text */
+        border: 1px outset buttonborder;
     }
 }
 

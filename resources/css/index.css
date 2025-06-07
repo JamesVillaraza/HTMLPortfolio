@@ -169,8 +169,7 @@ a{
     object-fit: cover; /* or contain whatever works better */
     display: flex;
     flex-grow: 1;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .8), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border: 2.5px solid #240f0f;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 .about-buttons {
@@ -339,13 +338,19 @@ body.dark-mode #resume-button {
     background: #f1f1f1;
     color: #181818;
 }
+body.dark-mode #resume-button:hover {
+    background: rgb(255, 222, 222);
+}
 body.dark-mode #linkedin-button {
     background: #333;
     color: #f1f1f1;
 }
+body.dark-mode #linkedin-button:hover {
+    background: #444444;
+}
 body.dark-mode #about-pic {
     border-color: #f1f1f1;
-    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* box-shadow: rgba(255, 255, 255, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px; */
 }
 body.dark-mode .projects-entry {
     color: #f1f1f1;
